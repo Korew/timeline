@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+.wrapper {
+  margin: 80px 0;
+}
+.header {
+  text-align: center;
+  margin: 0 auto;
+}
+.header-heading {
+  opacity: 0.4;
+  color: #030303;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+}
+.header-title {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 42px;
+  color: #030303;
+}
+.header-title span {
+  color: #ec5652;
+}
+.timeline-holder {
+  font-size: 0;
+  padding: 20px;
+}
+.timeline-period {
+  padding: 2px;
+  font-size: 1rem;
+  display: inline-block;
+  width: 20%;
+}
+.timeline-period-number {
+  font-weight: 600;
+}
+.timeline-period-title {
+  opacity: 0.8;
+  font-weight: 300;
+  font-size: 24px;
+}
+.timeline-period-title img {
+  position: relative;
+  top: 5px;
+}
+.timeline-period-description {
+  opacity: 0.8;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #030303;
+}
+.timeline-period-bar {
+  height: 10px;
+  -webkit-transform: skew(-30deg);
+  -ms-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+.timeline-period:nth-child(odd) .timeline-period-title {
+  color: #ec5652;
+}
+.timeline-period:nth-child(odd) .timeline-period-bar {
+  background: #f0544e;
+}
+.timeline-period:nth-child(even) .timeline-period-title {
+  color: #2b2238;
+}
+.timeline-period:nth-child(even) .timeline-period-bar {
+  background: #2c2139;
+}
+.timeline-period:hover .timeline-period-bar {
+  border: 1px solid #000000;
+}
