@@ -56,7 +56,6 @@ html {
   min-height: 220px;
 }
 .timeline-period-card {
-  position: relative;
   width: 25vw;
   max-width: 350px;
   margin-bottom: 40px;
