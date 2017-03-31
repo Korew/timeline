@@ -7,11 +7,13 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 .wrapper {
-  margin: 80px 0;
+  margin: 80px auto;
+  max-width: 1250px;
 }
 .header {
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 70px;
 }
 .header-heading {
   opacity: 0.4;
@@ -32,26 +34,67 @@ html {
 .timeline-holder {
   font-size: 0;
   padding: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1170px;
+  margin-right: 80px;
 }
 .timeline-period {
   padding: 2px;
   font-size: 1rem;
-  display: inline-block;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 20%;
+  min-height: 220px;
+}
+.timeline-period-card {
+  position: relative;
+  width: 25vw;
+  max-width: 350px;
+  margin-bottom: 40px;
 }
 .timeline-period-number {
+  float: left;
+  width: 55px;
+  height: 55px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 21px;
   font-weight: 600;
+  line-height: 15px;
+  border-radius: 50%;
+  border: 5px solid #e34842;
+  background-color: #ef544e;
 }
 .timeline-period-title {
+  margin-left: 72px;
   opacity: 0.8;
   font-weight: 300;
   font-size: 24px;
+  color: #ec5652;
 }
 .timeline-period-title img {
   position: relative;
   top: 5px;
 }
 .timeline-period-description {
+  margin-left: 72px;
   opacity: 0.8;
   font-weight: 300;
   font-size: 16px;
@@ -59,16 +102,23 @@ html {
   color: #030303;
 }
 .timeline-period-bar {
+  width: 100%;
   height: 10px;
   -webkit-transform: skew(-30deg);
   -ms-transform: skew(-30deg);
   transform: skew(-30deg);
-}
-.timeline-period:nth-child(odd) .timeline-period-title {
-  color: #ec5652;
-}
-.timeline-period:nth-child(odd) .timeline-period-bar {
   background: #f0544e;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+.timeline-period:nth-child(even) .timeline-period-card {
+  position: relative;
+  top: 340px;
+}
+.timeline-period:nth-child(even) .timeline-period-number {
+  border-color: #392d4a;
+  background-color: #48395b;
 }
 .timeline-period:nth-child(even) .timeline-period-title {
   color: #2b2238;

@@ -10,7 +10,8 @@ html {
 }
 
 .wrapper {
-	margin: 80px 0;
+	margin: 80px auto;
+	max-width: 1250px;
 }
 
 
@@ -18,6 +19,7 @@ html {
 	text-align: center;
 
 	margin: 0 auto;
+	margin-bottom: 70px;
 
 	&-heading {
 		opacity: 0.4;
@@ -44,23 +46,51 @@ html {
 	&-holder {
 		font-size: 0;
 		padding: 20px;
+		display: flex;
+		max-width: 1170px;
+		margin-right: 80px;
 	}
 
 	&-period {
 		padding: 2px;
 		font-size: 1rem;
-		display: inline-block;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		width: 20%;
+		min-height: 220px;
+
+		&-card {
+			position: relative;
+			width: 25vw;
+			max-width: 350px;
+			margin-bottom: 40px;
+		}
 
 		&-number {
+			float: left;			;
+			width: 55px;
+			height: 55px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #ffffff;
+			font-size: 21px;
 			font-weight: 600;
+			line-height: 15px;
+			border: 5px solid #e34842;
+			border-radius: 50%;
+			border: 5px solid #e34842;
+			background-color: #ef544e;
 
 		}
 
 		&-title {
+			margin-left: 72px;
 			opacity: 0.8;
 			font-weight: 300;
 			font-size: 24px;
+			color: #ec5652;
 
 			img {
 				position: relative;
@@ -69,6 +99,7 @@ html {
 		}
 
 		&-description {
+			margin-left: 72px;
 			opacity: 0.8;
 			font-weight: 300;
 			font-size: 16px;
@@ -78,21 +109,27 @@ html {
 		}
 
 		&-bar {
+			width: 100%;
 			height: 10px;
 			transform: skew(-30deg);
-		}
-
-		&:nth-child(odd) {
-			.timeline-period-title {
-				color: #ec5652;
-			}
-
-			.timeline-period-bar {
-				background: #f0544e;
-			}
+			background: #f0544e;
+			align-self: flex-end;
 		}
 
 		&:nth-child(even) {
+
+			.timeline-period-card {
+				position: relative;
+				top: 340px;
+			}
+
+
+			.timeline-period-number {
+
+				border-color: #392d4a;
+				background-color: #48395b;
+			}
+
 			.timeline-period-title {
 				color: #2b2238;;
 			}
