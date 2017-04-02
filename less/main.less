@@ -11,7 +11,9 @@ html {
 
 .wrapper {
 	margin: 80px auto;
-	max-width: 1250px;
+	box-sizing: content-box;
+	max-width: 1170px;	
+	padding: 10px;
 }
 
 
@@ -47,6 +49,11 @@ html {
 		font-size: 0;
 		display: flex;
 		max-width: 1170px;
+		padding-right: 90px;
+
+		@media all and (max-width: 1024px) {
+			flex-direction: column;
+		}
 	}
 
 	&-period {
@@ -57,10 +64,26 @@ html {
 		flex-direction: column;
 		justify-content: space-between;
 
+		@media all and (max-width: 1024px) {
+			flex-direction: row;
+			width: 100%;
+			justify-content: flex-start;
+		}
+
 		&-card {
 			width: 25vw;
-			max-width: 320px;
+			max-width: 330px;
 			margin-bottom: 4px;
+			min-height: 136px;
+
+			@media all and (max-width: 1150px) {
+				min-height: 160px;
+			}
+
+			@media all and (max-width: 1024px) {
+				width: 100%;
+				order: 2;
+			}
 		}
 
 		&-number {
@@ -88,6 +111,11 @@ html {
 				position: relative;
 				left: -6px;
 				top: 70px;
+
+				@media all and (max-width: 1150px) {
+					height: 88px;
+					top: 82px;
+				}
 			}
 
 		}
@@ -125,13 +153,28 @@ html {
 			transform: skew(-25deg);
 			background: #f0544e;
 			align-self: flex-end;
+
+			@media all and (max-width: 1024px) {
+				order: 1;
+				width: 10px;
+				align-self: stretch;
+			}
 		}
 
 		&:nth-child(even) {
 
 			.timeline-period-card {
 				position: relative;
-				top: 244px;
+				top: 236px;
+				max-width: 350px;
+
+				@media all and (max-width: 1150px) {
+					top: 284px;
+				}
+
+				@media all and (max-width: 1024px) {
+					position: static;
+				}
 			}
 
 
@@ -142,12 +185,15 @@ html {
 				&:after {
 					content: '';
 					display: block;
-					height: 64px;
 					width: 1px;
 					background-color: #2c2139;
 					position: relative;
 					left: -6px;
 					top: -70px;
+
+					@media all and (max-width: 1150px) {
+						top: -82px;
+					}
 				}
 			}
 
