@@ -1,3 +1,10 @@
+@number-border-odd: #e04134;
+@number-border-odd-fill: #ec8d85;
+@number-odd-bg: #e75149;
+@number-border-even: #281b36;
+@number-border-even-fill: #817b89;
+@number-even-bg: #46365a;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -53,6 +60,7 @@ html {
 
 		@media all and (max-width: 1024px) {
 			flex-direction: column;
+			padding-right: 0;
 		}
 	}
 
@@ -68,6 +76,7 @@ html {
 			flex-direction: row;
 			width: 100%;
 			justify-content: flex-start;
+			align-items: stretch;
 		}
 
 		&-card {
@@ -88,19 +97,50 @@ html {
 
 		&-number {
 			float: left;
-			width: 55px;
-			height: 55px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: #ffffff;
-			font-size: 21px;
-			font-weight: 600;
-			line-height: 15px;
-			border: 5px solid #e34842;
+			width: 51px;
+			height: 51px;
 			border-radius: 50%;
-			border: 5px solid #e34842;
-			background-color: #ef544e;
+			background-color: @number-border-odd-fill;
+
+			.inner {
+				width: 41px;
+				height: 41px;
+				margin: 5px;
+				color: #ffffff;
+				font-size: 21px;
+				font-weight: 600;
+			  	border-radius: 50%;
+			  	background-color: @number-odd-bg;
+			  	display: flex;
+			  	justify-content: space-around;
+			  	align-items: center;
+			}
+
+			&.twenty {
+			    background-image:
+			        linear-gradient(198deg, transparent 50%, @number-border-odd 50%),
+			        linear-gradient(-90deg, @number-border-odd 50%, transparent 50%);
+			}
+
+			&.forty {
+			    background-image:
+			        linear-gradient(126deg, transparent 50%, @number-border-odd 50%),
+			        linear-gradient(-90deg, @number-border-odd 50%, transparent 50%);
+			}
+
+			&.sixty {
+			    background-color: @number-border-odd;
+			    background-image:
+			        linear-gradient(90deg, @number-border-odd-fill 50%, transparent 50%),
+			        linear-gradient(234deg, transparent 50%, @number-border-odd-fill 50%);
+			}
+
+			&.eighty {
+			    background-color: @number-border-odd;
+			    background-image:
+			        linear-gradient(90deg, @number-border-odd-fill 50%, transparent 50%),
+			        linear-gradient(162deg, transparent 50%, @number-border-odd-fill 50%);
+			}
 
 			&:after {
 				content: '';
@@ -109,13 +149,23 @@ html {
 				width: 1px;
 				background-color: #f0544e;
 				position: relative;
-				left: -6px;
-				top: 70px;
+				left: 25px;
+				top: 10px;
 
 				@media all and (max-width: 1150px) {
 					height: 88px;
-					top: 82px;
 				}
+
+				@media all and (max-width: 1024px) {
+					width: 20px;
+					height: 1px;
+					top: -24px;
+					left: -28px;
+				}
+			}
+
+			@media all and (max-width: 1024px) {
+				margin-left: 36px;
 			}
 
 		}
@@ -135,6 +185,10 @@ html {
 					fill: #ec5652;
 				}
 			}
+
+			@media all and (max-width: 1024px) {
+				margin-left: 108px;
+			}
 		}
 
 		&-description {
@@ -145,23 +199,30 @@ html {
 			line-height: 24px;
 			color: #030303;
 
+			@media all and (max-width: 1024px) {
+				margin-left: 108px;
+			}
+
 		}
 
 		&-bar {
 			width: 100%;
 			height: 10px;
-			transform: skew(-25deg);
+			transform: skewX(-25deg);
 			background: #f0544e;
 			align-self: flex-end;
 
 			@media all and (max-width: 1024px) {
 				order: 1;
 				width: 10px;
+				height: auto;
 				align-self: stretch;
+				transform: skewX(0deg);
+				transform: skewY(25deg);
 			}
 		}
 
-		&:nth-child(even) {
+		&:nth-child(2n) {
 
 			.timeline-period-card {
 				position: relative;
@@ -179,20 +240,60 @@ html {
 
 
 			.timeline-period-number {
-				border-color: #392d4a;
-				background-color: #48395b;
+				background-color: @number-border-even-fill;
+
+				.inner {
+					width: 41px;
+					height: 41px;
+					margin: 5px;
+					color: #ffffff;
+					font-size: 21px;
+					font-weight: 600;
+					border-radius: 50%;
+					background-color: @number-even-bg;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+				}
+
+				&.twenty {
+				background-image:
+					linear-gradient(198deg, transparent 50%, @number-border-even 50%),
+					linear-gradient(-90deg, @number-border-even 50%, transparent 50%);
+				}
+
+				&.forty {
+				    background-image:
+				        linear-gradient(126deg, transparent 50%, @number-border-even 50%),
+				        linear-gradient(-90deg, @number-border-even 50%, transparent 50%);
+				}
+
+				&.sixty {
+				    background-color: @number-border-even;
+				    background-image:
+				        linear-gradient(90deg, @number-border-even-fill 50%, transparent 50%),
+				        linear-gradient(234deg, transparent 50%, @number-border-even-fill 50%);
+				}
+
+				&.eighty {
+				    background-color: @number-border-even;
+				    background-image:
+				        linear-gradient(90deg, @number-border-even-fill 50%, transparent 50%),
+				        linear-gradient(162deg, transparent 50%, @number-border-even-fill 50%);
+				}
 
 				&:after {
 					content: '';
 					display: block;
-					width: 1px;
 					background-color: #2c2139;
-					position: relative;
-					left: -6px;
-					top: -70px;
+					top: -125px;
 
 					@media all and (max-width: 1150px) {
-						top: -82px;
+						top: -150px;
+					}
+
+					@media all and (max-width: 1024px) {
+						top: -24px;
 					}
 				}
 			}
