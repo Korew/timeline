@@ -60,6 +60,9 @@ html {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
 }
 @media all and (max-width: 1024px) {
   .timeline-period {
